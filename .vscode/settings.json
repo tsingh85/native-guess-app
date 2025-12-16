@@ -5,8 +5,16 @@
     "source.fixAll.eslint": "explicit"
   },
   "prettier.requireConfig": true,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "javascript": true,
+    "javascriptreact": true,
+    "typescript": true,
+    "typescriptreact": true
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
