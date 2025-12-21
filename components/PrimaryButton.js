@@ -1,14 +1,12 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-function PrimaryButton(props) {
-  function pressHandler() {
-    console.log('Pressed!');
-  }
+import Colors from '../constants/colors';
 
+function PrimaryButton({ children, onPress }) {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
-        onPress={pressHandler}
+        onPress={onPress}
         style={({ pressed }) =>
           pressed
             ? [styles.buttonInnerContainer, styles.pressed]
@@ -16,7 +14,7 @@ function PrimaryButton(props) {
         }
       >
         {/* //Children is something that is passed between the opening and closing tags of a component */}
-        <Text style={styles.buttonText}>{props.children}</Text>
+        <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>
   );
@@ -32,7 +30,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   buttonInnerContainer: {
-    backgroundColor: '#72063c',
+    backgroundColor: Colors.primary500,
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
